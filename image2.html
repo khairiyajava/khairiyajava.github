@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Animation</title>
+    <style>
+        #image {
+            position: absolute;
+            left: 0;
+            top: 20%;
+            transform: translateY(-50%);
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image" src="./1276bfc26cd4033ea28138e913eac8ed.jpg" width="150" height="150">
+    <button>Move Image</button>
+    <script>
+        document.querySelector("#image").addEventListener("mouseover", function() {
+            this.style.width = "200px";
+            this.style.height = "200px";
+        });
+        document.querySelector("#image").addEventListener("mouseout", function() {
+            this.style.width = "150px";
+            this.style.height = "150px";
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('button').onclick = function() {
+                let image = document.querySelector('#image');
+                if (image.style.left === '0px') {
+                    image.style.left = "calc(100% - 150px)";
+                } else {
+                    image.style.left = '0px';
+                }
+
+            };
+
+        });
+    </script>
+</body>
+
+</html>
